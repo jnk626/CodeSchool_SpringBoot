@@ -6,6 +6,8 @@ import org.generation.italy.legion.model.entities.Level;
 import org.generation.italy.legion.model.entities.Teacher;
 import org.hibernate.Session;
 
+import java.util.List;
+
 import static org.generation.italy.legion.model.data.HibernateConstants.*;
 
 public class HibernateTeacherRepository extends GenericCrudRepository<Teacher> implements TeacherRepository {
@@ -22,7 +24,7 @@ public class HibernateTeacherRepository extends GenericCrudRepository<Teacher> i
     }
 
     @Override
-    public Iterable<Teacher> findWithSkillAndLevel(long idSkill, Level competenceLevel) {
+    public List<Teacher> findWithSkillAndLevel(long idSkill, Level competenceLevel) {
         return session.createSelectionQuery(HQL_FIND_TEACHER_BY_SKILL_LEVEL, Teacher.class)
               .setParameter("level", competenceLevel)
               .setParameter("id", idSkill).list();

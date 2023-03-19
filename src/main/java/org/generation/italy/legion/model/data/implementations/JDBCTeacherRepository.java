@@ -37,7 +37,7 @@ public class JDBCTeacherRepository implements TeacherRepository {
     }
 
     @Override
-    public Iterable<Teacher> findWithSkillAndLevel(long idSkill, Level competenceLevel) {
+    public List<Teacher> findWithSkillAndLevel(long idSkill, Level competenceLevel) {
         return null;
     }
 
