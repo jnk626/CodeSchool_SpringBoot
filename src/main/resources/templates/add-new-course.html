@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Course</title>
+</head>
+<body>
+    <h1>Create new Course</h1>
+    <form action="addNewCourse" method="get">
+        <fieldset>
+            <legend>Insert the course data</legend>
+            <label for="title">Title</label>
+            <input name="title" maxlength="32" id="title" required><br />
+            <label for="description">Description</label>
+            <input name="description" maxlength="32" id="description" required><br />
+            <label for="program">Program</label>
+            <input name="program" maxlength="32" id="program"><br />
+            <label for="duration">Duration</label>
+            <input type="number" step="0.01" min="0.25" name="duration" id="duration" required><br />
+            <label for="active">Is Active</label>
+            <input type="checkbox" name="active" id="active" checked><br />
+            <button>Add</button>
+        </fieldset>
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Program</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="c : ${courses}">
+            <td th:text="${c.id}">2000</td>
+            <td th:text="${c.title}">Java</td>
+            <td th:text="${c.description}">Corso bello</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

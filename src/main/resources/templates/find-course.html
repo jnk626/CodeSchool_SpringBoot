@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Course</title>
+</head>
+<body>
+    <h1>Find Course</h1>
+    <form action="findCourseById" method="get">
+        <label for="courseId">Course Id</label>
+        <input type="number" name="courseId" id="courseId">
+        <button>Find by Id</button>
+    </form>
+    <form action="findCourseByTitle" method="get">
+        <label for="title">Title</label>
+        <input name="title" maxlength="32" id="title" required>
+        <button>Find by Title</button>
+    </form>
+</body>
+</html>

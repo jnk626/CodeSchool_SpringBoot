@@ -7,6 +7,7 @@ import org.generation.italy.legion.model.data.exceptions.EntityNotFoundException
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,6 +37,7 @@ public class GenericCrudRepository<T> implements AbstractCrudRepository<T> {
    }
 
    @Override
+   @Transactional
    public T create(T entity) throws DataException {
       session.persist(entity);
       return entity;

@@ -2,19 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Lista dei Corsi</title>
+    <title>Course List</title>
 </head>
 <body>
-    <p>
-        Ciao King!
-    </p>
-    <p th:text="${data}">Ciao Mondo!</p>
     <table>
         <thead>
             <tr>
-                <th>Id Corso</th>
-                <th>Titolo</th>
-                <th>Descrizione</th>
+                <th>Course Id</th>
+                <th>Title</th>
+                <th>Description</th>
             </tr>
         </thead>
         <tbody>
@@ -25,10 +21,5 @@
             </tr>
         </tbody>
     </table>
-    <form action="findCourseById" method="get">
-        <label for="courseId">Id Corso</label>
-        <input type="number" name="courseId" id="courseId">
-        <button>Ricerca Corso per Id</button>
-    </form>
 </body>
 </html>
