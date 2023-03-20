@@ -8,8 +8,8 @@
     <span><a href="/home"><-- Back to Home</a></span>
     <h1>Find Teacher</h1>
     <form action="findTeacherBySkillLevel" method="get">
-        <label for="skillId">Skill Id</label>
-        <input name="skillId" id="skillId"><br>
+        <label for="idSkill">Skill Id</label>
+        <input name="idSkill" id="idSkill"><br>
         <label>Level</label>
         <select>
             <option th:each="l : ${levels}" th:value="${l}" th:text="${l}" />

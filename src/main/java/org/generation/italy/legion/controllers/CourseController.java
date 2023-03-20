@@ -36,7 +36,7 @@ public class CourseController {
     @PostMapping("/addNewCourse") //questo usa il method POST
     public String addNewCourse(Model m, @Valid Course c, BindingResult result) { // Valid attiva la validazione, BindingResult si tiene in pancia i valori del form e li verifica
         if (result.hasErrors()) {
-            return "add-new-course"; //vanno aggiunte sull'html i vari span con i th
+            return "add-new-course"; //vanno aggiunte sull'html i vari span con i th:errors
         }
         try {
             Course newCourse = service.saveCourse(c);
