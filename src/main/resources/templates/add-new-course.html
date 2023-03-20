@@ -5,20 +5,26 @@
     <title>Add Course</title>
 </head>
 <body>
+    <span><a href="/home"><-- Back to Home</a></span>
     <h1>Create new Course</h1>
-    <form action="addNewCourse" method="get">
+    <form action="addNewCourse" method="POST" th:object="${course}"> <!-- vuole subito un corso, anche vuoto, da validare -->
         <fieldset>
             <legend>Insert the course data</legend>
             <label for="title">Title</label>
-            <input name="title" maxlength="32" id="title" required><br />
+            <input name="title" maxlength="32" id="title" th:field="*{title}" required><br />
+            <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
             <label for="description">Description</label>
-            <input name="description" maxlength="32" id="description" required><br />
+            <input name="description" maxlength="32" id="description" th:field="*{description}" required><br />
+            <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
             <label for="program">Program</label>
-            <input name="program" maxlength="32" id="program"><br />
+            <input name="program" maxlength="32" id="program" th:field="*{program}"><br />
+            <span th:if="${#fields.hasErrors('program')}" th:errors="*{program}"></span>
             <label for="duration">Duration</label>
-            <input type="number" step="0.01" min="0.25" name="duration" id="duration" required><br />
+            <input type="number" step="0.01" min="0.25" name="duration" id="duration" th:field="*{duration}" required><br />
+            <span th:if="${#fields.hasErrors('duration')}" th:errors="*{duration}"></span>
             <label for="active">Is Active</label>
-            <input type="checkbox" name="active" id="active" checked><br />
+            <input type="checkbox" name="active" id="active" th:field="*{active}" checked><br />
+            <span th:if="${#fields.hasErrors('active')}" th:errors="*{active}"></span>
             <button>Add</button>
         </fieldset>
     </form>

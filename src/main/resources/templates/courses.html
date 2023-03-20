@@ -5,6 +5,7 @@
     <title>Course List</title>
 </head>
 <body>
+    <span><a href="/home"><-- Back to Home</a></span>
     <table>
         <thead>
             <tr>
@@ -15,7 +16,7 @@
         </thead>
         <tbody>
             <tr th:each="c : ${courses}">
-                <td th:text="${c.id}">2000</td>
+                <td th:href="@{/findCourseById(courseId = ${c.id}}" th:text="${c.id}">2000</td>
                 <td th:text="${c.title}">Java</td>
                 <td th:text="${c.description}">Corso bello</td>
             </tr>

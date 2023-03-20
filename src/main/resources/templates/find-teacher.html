@@ -5,10 +5,15 @@
     <title>Find Teacher</title>
 </head>
 <body>
+    <span><a href="/home"><-- Back to Home</a></span>
     <h1>Find Teacher</h1>
     <form action="findTeacherBySkillLevel" method="get">
-        <label for="teacherId">Teacher Id</label>
-        <input name="teacherId" id="teacherId">
+        <label for="skillId">Skill Id</label>
+        <input name="skillId" id="skillId"><br>
+        <label>Level</label>
+        <select>
+            <option th:each="l : ${levels}" th:value="${l}" th:text="${l}" />
+        </select><br>
         <button>Find by Skill Level</button>
     </form>
 </body>

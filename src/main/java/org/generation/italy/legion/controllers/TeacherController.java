@@ -1,6 +1,7 @@
 package org.generation.italy.legion.controllers;
 
 import org.generation.italy.legion.model.entities.Level;
+import org.generation.italy.legion.model.entities.Skill;
 import org.generation.italy.legion.model.entities.Teacher;
 import org.generation.italy.legion.model.services.abstractions.AbstractDidacticService;
 import org.generation.italy.legion.model.services.abstractions.AbstractTeacherService;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -21,7 +23,9 @@ public class TeacherController {
     }
 
     @GetMapping("/find-teacher")
-    public String showFind() {
+    public String showFind(Model model) {
+        List<Level> levels = Arrays.asList(Level.values());
+        model.addAttribute("levels", levels);
         return "find-teacher";
     }
 
